@@ -6,6 +6,6 @@
   "author": "petehunt",
   "license": "MIT",
   "dependencies": {
-    "react-tools": "./react-tools"
+    "react-tools": "http://petehunt.net/react.tar.gz"
   }
 }
