@@ -6,6 +6,6 @@
   "author": "petehunt",
   "license": "MIT",
   "dependencies": {
-    "react-tools": "*"
+    "react-tools": "https://api.github.com/repos/facebook/react/tarball"
   }
 }
