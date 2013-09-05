@@ -26,7 +26,7 @@ var index = {
     var g = eval('global'); // bypass Browserify's auto-global
     if (g.__staticify_css) {
       var code = '';
-      g.staticify_css.forEach(function(item) {
+      g.__staticify_css.forEach(function(item) {
         code += '<style id="' + item.nodeID + '">\n' + item.code + '\n</style>\n';
       });
       if (markup.indexOf('</head>') === -1) {
