@@ -11,6 +11,9 @@ var index = {
     React.renderComponentToString(component, function(m) {
       markup = m;
     });
+    if (markup.indexOf('</body>') === -1) {
+      throw new Error('Must have </body> in the generated page to insert JS');
+    }
     markup = markup.replace(
       '</body>',
       '<script src="' + bundlePath + '"></script>' +
@@ -19,6 +22,19 @@ var index = {
         ', ' + JSON.stringify(props) + ');' +
         '</script></body>'
     );
+    // Get staticify CSS if it's there
+    var g = eval('global'); // bypass Browserify's auto-global
+    if (g.__staticify_css) {
+      var code = '';
+      g.staticify_css.forEach(function(item) {
+        code += '<style id="' + item.nodeID + '">\n' + item.code + '\n</style>\n';
+      });
+      if (markup.indexOf('</head>') === -1) {
+        throw new Error('Must have </head> in the generated page to insert CSS');
+      }
+      markup = markup.replace('</head>', code + '\n</head>');
+    }
+
     return markup;
   },
   clientRender: function(moduleName, props) {
