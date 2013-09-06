@@ -2,6 +2,10 @@
 
 This is the simplest API I could come up with to allow rendering React on the server using Browserify in a flexible way.
 
+## Requirements
+
+You need to install `react-tools` **globally**. This will not be done automatically for you.
+
 ## Example with Django
 
 First browserify your app (you can do this with `reactify-server-rendering-tools` as well):

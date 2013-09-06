@@ -4,8 +4,5 @@
   "description": "Server side rendering for React apps using Reactify+Browserify",
   "main": "index",
   "author": "petehunt",
-  "license": "MIT",
-  "dependencies": {
-    "react-tools": "http://petehunt.net/react.tar.gz"
-  }
+  "license": "MIT"
 }
