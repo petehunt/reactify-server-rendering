@@ -1,5 +1,7 @@
 # reactify-server-rendering
 
+![unmaintained](http://img.shields.io/badge/status-unmaintained-red.png)
+
 This is the simplest API I could come up with to allow rendering React on the server using Browserify in a flexible way.
 
 ## Requirements
